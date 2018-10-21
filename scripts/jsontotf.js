@@ -198,7 +198,7 @@ resource "aws_instance" "${ ec2_name }" {
     # The name of our SSH keypair you've created and downloaded
     # from the AWS console.
     #
-    # https://console.aws.amazon.com/ec2/v2/home?region=us-west-2#KeyPairs:
+    # https://console.aws.amazon.com/ec2/v2/home?region=eu-west-1#KeyPairs:
     #
     key_name = "\${var.key_name}"
   
