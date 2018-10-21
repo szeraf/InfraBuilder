@@ -368,6 +368,9 @@ resource "aws_security_group" "${ lb_sg_name }" {
             }
         }
         // return the tf file
+        if (terraform == main()) {
+            return "No valid element found."
+        }
         return terraform;
     }
 
