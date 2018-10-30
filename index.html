@@ -33,7 +33,56 @@
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card-body">
                     <div id="howto" class="howto">Click the right hand side picture to edit. After save, the Converted Output below shows the generated file.</div><br>
-                    <div id="howto" class="howto"><textarea id="params" name="params" placeholder="" readonly cols="85" rows="20"></textarea></div><br>
+                    <div id="howto" class="howto"><textarea id="params" name="params" placeholder="" readonly cols="85" rows="20"><script type="text/javascript">document.getElementById(params).innertext = 
+`The following shapes are supported, with the listed mandatory parameters:
+    virtual_private_cloud = {
+        vpc_name: ""
+    }
+
+    subnet = {
+        subnet_name: "",
+        vpc_name: ""
+    }
+
+    route_table = {
+        route_table_name: "",
+        vpc_name: "",
+        igw_name: "",
+        subnet_name: ""
+    }
+
+    internet_gateway = {
+        vpc_name: "",
+        igw_name: ""
+    }
+
+    ec2_security_group = {
+        ec2_sg_name: "",
+        vpc_name: ""
+    }
+
+    ec2_instance = {
+        ec2_name: "",
+        instance_type: "",
+        ami_id: "",
+        ec2_count: "",
+        vpc_name: "",
+        subnet_name: ""
+    }
+
+    elastic_load_balancing = {
+        elb_name: "",
+        subnet_name: "",
+        elb_sg_name: "",
+        ec2_name: ""
+    }
+
+    load_balancer_security_group = {
+        lb_sg_name: "",
+        vpc_name: "",
+        igw_name: ""
+    }`
+                    </script></textarea></div><br>
                     <br><div id="howto" class="howto">Official draw.io tutorial video:</div>
                     <iframe height="315" src="https://www.youtube-nocookie.com/embed/t3l0uDiFga4?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
