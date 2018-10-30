@@ -41,8 +41,8 @@ function edit(elt)
                 // Configuration
                 iframe.contentWindow.postMessage(JSON.stringify({action: 'configure',
                     config: {defaultFonts: ["Humor Sans", "Helvetica", "Times New Roman"],
-                                defaultLibraries: "aws2,aws3",
-                                version: "0.2"}}), '*');
+                                defaultLibraries: "aws2",
+                                version: "0.3"}}), '*');
             }
             else if (msg.event == 'init')
             {
@@ -80,9 +80,8 @@ function edit(elt)
                 iframe.contentWindow.postMessage(JSON.stringify({action: 'export',
                     format: 'xmlsvg', xml: msg.xml, spin: 'Updating page'}), '*');
                 localStorage.setItem('.draft-' + name, JSON.stringify({lastModified: new Date(), xml: msg.xml}));
-                localStorage.setItem('.xml-' + name, JSON.stringify({lastModified: new Date(), xml: msg.xml}));
 
-                generateXML(msg.xml);
+                convertXML(msg.xml);
             }
             else if (msg.event == 'exit')
             {
@@ -120,7 +119,7 @@ function start()
     }
 };
 
-function generateXML(xml_raw)
+function convertXML(xml_raw)
 {
     parser = new DOMParser();
     xmlDoc = parser.parseFromString(xml_raw,"text/xml");
